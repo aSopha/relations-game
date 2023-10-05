@@ -1,0 +1,226 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  margin: .25em;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+
+button:active {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.word-block-selected{
+  display: flex;
+  place-self: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: .5em;
+  font-weight: 600;
+  height: 6em;
+  width: 9.75em;
+  background-color: #646cff;
+  cursor: pointer;
+  margin: .5em;
+  transition: all .33s;
+}
+
+.word-block-selected:hover {
+  background-color: #3e439e;
+}
+.word-block-selected:active {
+  background-color: rgb(168, 0, 0);
+  width: 8.77em;
+  height: 5.4em;
+}
+
+.word-block{
+  display: flex;
+  place-self: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: .5em;
+  font-weight: 600;
+  height: 6em;
+  width: 9.75em;
+  background-color: red;
+  cursor: pointer;
+  margin: .5em;
+  transition: all .33s;
+}
+
+.word-block:hover{
+  background-color: rgb(168, 0, 0);
+}
+.word-block:active {
+  background-color: #3e439e;
+  width: 8.77em;
+  height: 5.4em;
+}
+
+.word-grid{
+  display: grid;
+  justify-items: center;
+  width: 45em;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.solved-card {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  border-radius: .5em;
+  width: 97%;
+  height: 6em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  background-color: rgb(127, 168, 255);
+  color: black;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  animation: fade-in 0.5s ease-in-out;
+  .category {
+    color:rgb(0, 0, 0);
+    margin-top: .5em;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .solved-words{
+    display: flex;
+    font-size: 1.2em;
+    justify-content: center;
+    .word {
+      font-weight: 600;
+      margin-left: .5em;
+      margin-right: .5em;
+    }
+  }
+}
+
+.message-hide{
+  opacity: 0;
+  font-size: 2em;
+}
+.message {
+  font-size: 2em;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.lives {
+  display: flex;
+  justify-content: center;
+  transition: all .5s;
+  animation-name: fade-in;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  .dot-full {
+    margin: .25em;
+    height: 2.5em;
+    width: 2.5em;
+    background-color: #ff0000;
+    border-radius: 50%;
+  }
+  .dot-empty {
+    animation-name: red-to-white;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    margin: .25em;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+  }
+}
+
+@keyframes red-to-white {
+  from {
+    background-color: #ff0000;
+  }
+
+  to {
+    background-color: #d9d9d9;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
