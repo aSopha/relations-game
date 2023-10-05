@@ -1,1 +1,1 @@
-#Remake of the NYT game Connections using Vite & React.
+# Remake of the NYT game Connections using Vite & React.
