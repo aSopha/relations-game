@@ -11,7 +11,6 @@ const MAX_LIVES = 4;
 const puzzleIndex = Math.floor(Math.random() * puzzlesStub.length);
 
 function App() {
-  console.log(puzzlesStub);
   const [solutions, setSolutions] = useState(
     puzzlesStub[puzzleIndex].solutions
   );
@@ -55,7 +54,6 @@ function App() {
   const filteredWords = allWords.filter((word) => {
     return !completedCategories.includes(wordCategoryMap[word]);
   });
-  console.log(filteredWords);
 
   const filteredSolutions = solutions.filter((solution) => {
     return completedCategories.includes(solution.category);
@@ -73,7 +71,6 @@ function App() {
       newSet.add(word);
       setSelectedWords(newSet);
     }
-    console.log(newSet);
   };
 
   const submitWords = () => {
